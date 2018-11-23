@@ -42,18 +42,9 @@ Timer.set(2000, Timer.REPEAT, function(){
   });
 }, null);
 
-//Timer.set(1000 /* 1 sec */, Timer.REPEAT, function() {
-//  let value = GPIO.toggle(led);
-//  print(value ? 'Tick' : 'Tock', 'uptime:', Sys.uptime(), getInfo());
-//}, null);
-
 // Publish to MQTT topic on a button press. Button is wired to GPIO pin 0
 GPIO.set_button_handler(button, GPIO.PULL_UP, GPIO.INT_EDGE_NEG, 200, function() {
-  /*let message = getInfo();
-  let ok = MQTT.pub(topic, message, 1);
-  print('Published:', ok, topic, '->', message);
-  */
-  
+
   HTTP.query({
     url: 'http://google.com',
     success: function(res) {
